@@ -44,16 +44,24 @@
         font-weight: 400;
         /* text-transform: uppercase; */
         margin-top: 42px;
+        color: var(--inv-color);
       }
 
       h4 {
         text-align: center;
+        color: var(--inv-color);
       }
 
       #cedar-svg {
         top: 292px;
         position: absolute;
         transform: translateX(-148px);
+        pointer-events: none;
+        touch-action: none; 
+      }
+
+      #alboe-svg #ALBOE {
+        fill: var(--inv-color);
       }
 
       .theme-btns {
@@ -87,15 +95,16 @@
         flex-direction: column;
       }
 
-      .eagle-card {
+      #eagle-card {
         height: 190px;
         width: 102px;
         border-radius: 6px;
         background-color: #fff;
         text-align: center;
+        cursor: pointer;
       }
 
-      .jay-card {
+      #jay-card {
         height: 190px;
         width: 102px;
         border-radius: 6px;
@@ -103,6 +112,7 @@
         text-align: center;
         color: #fff;
         transform: translateX(20px);
+        cursor: pointer;
       }
 
       #jay-svg {
@@ -131,7 +141,7 @@
 
       <!-- ALBOE.IO SVG -->
       <?xml version="1.0" encoding="UTF-8"?>
-      <svg width="223px" height="53px" viewBox="0 0 223 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <svg id='alboe-svg' width="223px" height="53px" viewBox="0 0 223 53" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>ALBOE.io</title>
           <g id="Cedar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <g id="Artboard-Copy" transform="translate(-711.000000, -122.000000)">
@@ -170,7 +180,7 @@
 
         <div class='eagle-card-outer'>
           <span style='color: #fff'>SELECTED</span>
-          <div class='eagle-card'>
+          <div id='eagle-card'>
             <div class='cart-title'>
               EAGLE
               </br>
@@ -217,7 +227,7 @@
   
         </div>
 
-        <div class='jay-card'>
+        <div id='jay-card'>
           <div class='cart-title'>
             JAY
             </br>
@@ -534,17 +544,17 @@
     <!-- END OF TREE SVG -->
 
     <script>
-      const sunBtn = document.getElementById('sun');
-      const moonBtn = document.getElementById('moon');
+      const sunBtn = document.getElementById('eagle-card');
+      const moonBtn = document.getElementById('jay-card');
 
       const setDark = () => {
           document.documentElement.style.setProperty('--color-background', 'var(--color-black)');
-          document.documentElement.style.setProperty('tran-opacity', '1');
+          // document.documentElement.style.setProperty('tran-opacity', '1');
           document.documentElement.style.setProperty('--inv-color', 'var(--color-white)');
         }
       const setLight = () => {
         document.documentElement.style.setProperty('--color-background', 'var(--color-white)');
-        document.documentElement.style.setProperty('tran-opacity', '0');
+        // document.documentElement.style.setProperty('tran-opacity', '0');
         document.documentElement.style.setProperty('--inv-color', 'var(--color-black)');
       }
 
